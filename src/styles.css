@@ -64,6 +64,7 @@ button {
   padding: 15px;
   font-size: 22px;
 }
+
 img {
   width: 50px;
   padding: 2px;
@@ -78,9 +79,67 @@ img:hover {
   transform: scale(1.9);
 }
 
-.dark-theme {
-  background: linear-gradient(135deg, #2c2d2e 0%, #8dc4d8 100%) bottom center
-    no-repeat;
+.city-and-date-info {
+  width: 95%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0;
+}
+
+.current-city {
+  line-height: 15px;
+}
+.current-day-and-time {
+  line-height: 25px;
+  padding: 15px;
+}
+
+p {
+  line-height: 20px;
+  padding-top: 15px;
+}
+
+.weather-app-data {
+  padding-top: 0;
+  width: 75%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.weather-app-data strong {
+  color: rgb(201, 37, 37);
+}
+
+.weather-icon {
+  padding: 7px;
+  font-size: 64px;
+}
+
+/*Placeholder for extended forecast */
+.extended-forecast {
+  display: none;
+  width: 85%;
+  margin: auto;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+.temp {
+  font-size: 54px;
+  position: relative;
+  top: 15px;
+}
+
+.temp-unit {
+  font-size: 30px;
+  position: relative;
+  top: -15px;
 }
 
 .theme-button {
@@ -111,3 +170,20 @@ footer {
   font-size: 13px;
   color: rgb(123, 118, 118);
 }
+
+/* Set up a Dark Theme */
+/* .dark-theme {
+  background: linear-gradient(135deg, #1b1b1c 0%, #8dc4d8 100%) bottom center
+    no-repeat;
+} */
+
+/* .dark .theme-button {
+  color: rgb(63, 76, 119);
+  background: #f5f7fa;
+} */
+
+/* .dark {
+  background: linear-gradient(135deg, #8dc4d890 0%, #1b1b1c 100%) bottom center
+    no-repeat;
+  color: #f5f7fa;
+} */
