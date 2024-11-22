@@ -5,46 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nancy's Vanilla Weather Search</title>
     <link rel="stylesheet" href="src/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <header>
-      <button class="theme-button">Switch to dark theme</button>
-      <button>
-        <img
-          src="src/images/BackgroundMoonSquare_OnAlpha.png"
-          alt="cutest cat in the world"
-        />
-        <span class="button-text">Nancy's Weather App</span>
-      </button>
-      <form>
-        <input type="search" placeholder="Enter a City..." required />
-        <input type="submit" value="Search" />
-      </form>
-    </header>
-    <main>
-      <div>
-        <h1>Brooklyn</h1>
-        <p>
-          Thursday 18:29, rain<br />
-          Humidity: 95%, Wind: 15mph
-        </p>
-      </div>
-      <div>🌑 54° F</div>
-    </main>
+    <div class="weather-app">
+      <header>
+        <button class="theme-button">Switch to dark theme</button>
+        <button>
+          <img
+            src="src/images/BackgroundMoonSquare_OnAlpha.png"
+            alt="cutest cat in the world"
+          />
+          <span class="button-text">Nancy's Weather App</span>
+        </button>
+        <form class="search-form">
+          <input
+            type="search"
+            placeholder="Enter a City..."
+            required
+            class="search-form input"
+          />
+          <input type="submit" value="Search" class="search-form button" />
+        </form>
+      </header>
+      <main>
+        <div>
+          <h1>Brooklyn</h1>
+          <div class="current-day-and-time">Thursday 18:29</div>
+          <div>🌑 54° F</div>
+          <p>
+            <span class="humid">Humidity: <strong>95%</strong> </span><br />
+            <span class="wind">Wind: <strong>15mph</strong></span>
+          </p>
+        </div>
+      </main>
 
-    <footer>
-      Coded by
-      <a href="https://github.com/FanceeNancy" target="_blank">Nancy Melchert</a
-      >, is
-      <a
-        href="https://github.com/FanceeNancy/vanilla-weather-search-week-7"
-        target="_blank"
-        >open-sourced on GitHub</a
-      >, and
-      <a href="https://weather-by-nancy.netlify.app/" target="_blank"
-        >hosted on Netlify</a
-      >.
-    </footer>
+      <footer>
+        Coded by
+        <a href="https://github.com/FanceeNancy" target="_blank"
+          >Nancy Melchert</a
+        >, is
+        <a
+          href="https://github.com/FanceeNancy/vanilla-weather-search-week-7"
+          target="_blank"
+          >open-sourced on GitHub</a
+        >, and
+        <a href="https://weather-by-nancy.netlify.app/" target="_blank"
+          >hosted on Netlify</a
+        >.
+      </footer>
+    </div>
     <script src="src/app.js"></script>
   </body>
 </html>

@@ -1,14 +1,52 @@
 body {
-  background: linear-gradient(135deg, #f5f7fa 0%, #8dc4d8 100%) bottom center
-    no-repeat;
+  background: linear-gradient(135deg, #f5f7fa8f 0%, #8dc4d890 100%) bottom
+    center no-repeat;
   /* background-image: url("/images/BackgroundMoonOnAlpha.png") repeat; */
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  font-family: "Nunito Sans", "Segoe UI", sans-serif;
+}
+
+a {
+  color: #8dc4d8;
+}
+
+.weather-app {
+  background: linear-gradient(135deg, #8dc4d8 0%, #f5f7fa 100%) bottom center
+    no-repeat;
+  max-width: 600px;
+  margin: 25px auto;
+  box-shadow: 0 30px 50px rgba(65, 50, 100, 0.8);
+  border-radius: 16px;
+  padding: 30px;
+}
+
+header {
+  border-bottom: 1px solid rgb(194, 192, 192);
+  padding: 0 0 5px 0;
 }
 
 .main {
   padding: 10px;
   margin: auto;
   border-radius: 5px;
+}
+
+.search-form {
+  border: none;
+  border-radius: 6px;
+  padding: 16px;
+  margin-left: 5px;
+  font-size: 16px;
+}
+.search-form.input {
+  background-color: #edf0f1e8;
+  width: 75%;
+}
+
+.search-form.button {
+  background-color: #8dc4d8;
+  width: 20%;
+  color: white;
 }
 
 button {
@@ -64,4 +102,12 @@ img:hover {
 
 .theme-button:hover {
   transform: scale(1.3);
+}
+
+footer {
+  border-top: 1px solid rgb(194, 192, 192);
+  padding: 15px 0 0 0;
+  text-align: center;
+  font-size: 13px;
+  color: rgb(123, 118, 118);
 }
