@@ -66,6 +66,18 @@ button {
 }
 
 img {
+  padding: 3px;
+  margin: auto;
+  border-radius: 35px;
+  border: 7px solid #8dc4d8;
+}
+
+img:hover {
+  transform: scale(1.5);
+  margin: 25px auto;
+}
+
+.moon-on-alpha {
   width: 50px;
   padding: 2px;
   display: inline;
@@ -75,7 +87,7 @@ img {
   border: 2px solid #8dc4d8;
 }
 
-img:hover {
+.moon-on-alpha:hover {
   transform: scale(1.9);
 }
 
@@ -99,6 +111,13 @@ p {
   line-height: 20px;
   padding-top: 15px;
 }
+.icon-and-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 15px;
+}
 
 .weather-app-data {
   padding-top: 0;
@@ -110,11 +129,6 @@ p {
 
 .weather-app-data strong {
   color: rgb(201, 37, 37);
-}
-
-.weather-icon {
-  padding: 7px;
-  font-size: 64px;
 }
 
 /*Placeholder for extended forecast */
@@ -131,7 +145,8 @@ ul {
   text-align: center;
 }
 .temp {
-  font-size: 54px;
+  font-size: 72px;
+  font-weight: 300;
   position: relative;
   top: 15px;
 }
@@ -139,7 +154,8 @@ ul {
 .temp-unit {
   font-size: 30px;
   position: relative;
-  top: -15px;
+  top: 22px;
+  left: -35px;
 }
 
 .theme-button {
