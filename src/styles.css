@@ -38,9 +38,14 @@ header {
   margin-left: 5px;
   font-size: 16px;
 }
+
 .search-form.input {
   background-color: #edf0f1e8;
   width: 75%;
+}
+
+input::placeholder {
+  color: #1b1b1c;
 }
 
 .search-form.button {
@@ -72,7 +77,7 @@ img {
   border: 7px solid #8dc4d8;
 }
 
-img:hover {
+.weather-icon img:hover {
   transform: scale(1.5);
   margin: 25px auto;
 }
@@ -111,6 +116,7 @@ p {
   line-height: 20px;
   padding-top: 15px;
 }
+
 .icon-and-description {
   display: flex;
   flex-direction: column;
@@ -144,6 +150,8 @@ ul {
   justify-content: space-between;
   text-align: center;
 }
+/*End of extended forecast */
+
 .temp {
   font-size: 72px;
   font-weight: 300;
@@ -167,11 +175,7 @@ ul {
   padding: 4px;
   color: rgb(63, 76, 119);
   box-shadow: 2px 2px 10px;
-  background: linear-gradient(
-    109.6deg,
-    rgba(0, 0, 0, 0.93) 11.2%,
-    rgb(63, 61, 61) 78.9%
-  );
+  background: rgba(0, 0, 0, 0.93);
   color: lightgray;
 }
 
@@ -188,18 +192,50 @@ footer {
 }
 
 /* Set up a Dark Theme */
-/* .dark-theme {
+.dark {
   background: linear-gradient(135deg, #1b1b1c 0%, #8dc4d8 100%) bottom center
     no-repeat;
-} */
+  color: #f5f7fa;
+}
 
-/* .dark .theme-button {
+.dark .theme-button {
   color: rgb(63, 76, 119);
   background: #f5f7fa;
-} */
+}
 
-/* .dark {
-  background: linear-gradient(135deg, #8dc4d890 0%, #1b1b1c 100%) bottom center
+.dark .weather-app {
+  background: linear-gradient(135deg, #6e99a9 0%, #1b1b1c 100%) bottom center
     no-repeat;
+}
+
+.dark footer {
+  border-top: 1px solid rgb(194, 192, 192);
   color: #f5f7fa;
-} */
+}
+
+.dark .theme-button {
+  background: darkgray;
+  color: black;
+}
+
+.dark .title-button {
+  border: #1b1b1c;
+  box-shadow: 1px 1px 15px #1b1b1c;
+  color: #f5f7fa;
+  background: #1b1b1c;
+}
+
+.dark .search-form.input {
+  background-color: #6b6b6e;
+  color: #f5f7fa;
+}
+
+.dark .search-form.button {
+  background-color: #0c6281;
+  width: 20%;
+  color: #f5f7fa;
+}
+
+.dark input::placeholder {
+  color: #f5f7fa;
+}

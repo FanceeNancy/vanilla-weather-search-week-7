@@ -82,8 +82,22 @@ function refreashWeatherData(response) {
     currentDateELement.innerHTML = formatDate(currentDate);
   }
 }
+function changeTheme() {
+  let body = document.querySelector("body");
+  let button = document.querySelector("button");
+
+  if (body.classList.contains("dark")) {
+    body.classList.remove("dark");
+    button.innerHTML = "Switch to Dark Theme";
+  } else {
+    body.classList.add("dark");
+    button.innerHTML = "Switch To Light Theme";
+  }
+}
 
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
-//searchCity("Brooklyn");
+let themeButton = document.querySelector(".theme-button");
+themeButton.addEventListener("click", changeTheme);
+searchCity("Brooklyn");
