@@ -139,9 +139,10 @@ p {
 
 /*Placeholder for extended forecast */
 .extended-forecast {
-  display: none;
   width: 85%;
   margin: auto;
+  /* display: flex;
+  justify-content: center; */
 }
 
 ul {
@@ -149,6 +150,33 @@ ul {
   display: flex;
   justify-content: space-between;
   text-align: center;
+}
+
+.forecast-day {
+  text-align: center;
+  color: rgba(86, 87, 86, 0.777);
+
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.forecast-icon {
+  text-align: center;
+  font-size: 25px;
+}
+
+.forecast-temps {
+  color: rgb(201, 37, 37);
+  display: flex;
+  justify-content: center;
+}
+
+.forecast-temp-high {
+  padding: 1px 4px 0 0;
+}
+
+.forecast-temp-low {
+  padding: 1px 0 0 4px;
 }
 /*End of extended forecast */
 

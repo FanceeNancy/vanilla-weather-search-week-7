@@ -95,9 +95,33 @@ function changeTheme() {
   }
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Fri", "Sat", "Sun", "Mon", "Tue"];
+  let forecastHtml = "";
+
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `
+              <li>
+                <div class="forecast-day">${day}</div>
+                <div class="forecast-icon">☀️</div>
+                <div class="forecast-temps">
+                  <div class="forecast-temp-high"><strong> 54° </strong></div>
+                  <div class="forecast-temp-low">48°</div>
+                </div>
+              </li>`;
+  });
+  forecastElement.innerHTML = forecastHtml;
+}
+
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 let themeButton = document.querySelector(".theme-button");
 themeButton.addEventListener("click", changeTheme);
-searchCity("Brooklyn");
+//searchCity("Brooklyn");
+
+displayForecast();
