@@ -10,7 +10,7 @@ function searchCity(city) {
   // make api call and update the interface
   let apiKey = "0de0bof3a7bt5b0870ae4284e12b3ada";
   let apiURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=imperial`;
-  axios.get(apiURL).then(refreashWeatherData);
+  axios.get(apiURL).then(refreshWeatherData);
 }
 
 function formatDate(date) {
@@ -40,9 +40,9 @@ function formatDate(date) {
   return `${formattedDay}, ${hours}:${minutes}`;
 }
 
-function refreashWeatherData(response) {
+function refreshWeatherData(response) {
   //   console.log(response);
-  console.log(response.data);
+  //console.log(response.data);
 
   if (response.data.message === "City not found") {
     console.log(`${response.data.message}. Please enter a new city. `);
@@ -77,11 +77,14 @@ function refreashWeatherData(response) {
     temperatureElement.innerHTML = temperature;
     humidityElement.innerHTML = humidity;
     windElement.innerHTML = wind;
-    weatherIconElement.innerHTML = `<img src = "${weatherIcon}" alt="">`;
+    weatherIconElement.innerHTML = `<img src = "${weatherIcon}" alt="" class="weather-icon-img">`;
     descriptionElement.innerHTML = description;
     currentDateELement.innerHTML = formatDate(currentDate);
+
+    getForecast(response.data.city);
   }
 }
+
 function changeTheme() {
   let body = document.querySelector("body");
   let button = document.querySelector("button");
@@ -95,26 +98,72 @@ function changeTheme() {
   }
 }
 
-function displayForecast() {
-  let forecastElement = document.querySelector("#forecast");
+function displayForecast(response) {
+  console.log(response.data.daily);
 
-  let days = ["Fri", "Sat", "Sun", "Mon", "Tue"];
+  /*use days for dummy code if the response fails */
+  let days = Array(7).fill("day");
+
   let forecastHtml = "";
-
-  days.forEach(function (day) {
-    forecastHtml =
-      forecastHtml +
-      `
+  if (response.data.daily) {
+    response.data.daily.forEach(function (day, index) {
+      if (index < 6) {
+        forecastHtml =
+          forecastHtml +
+          `
+              <li>
+                <div class="forecast-day">${formatDay(day.time)}</div>
+      
+                <img src="${
+                  day.condition.icon_url
+                }" alt="" class="forecast-icon-img">
+         
+                <div class="forecast-temps">
+                <div class="forecast-temp-high"><strong> ${Math.round(
+                  day.temperature.maximum
+                )}°</strong></div>
+                  <div class="forecast-temp-low">${Math.round(
+                    day.temperature.minimum
+                  )}°</div>
+                </div>
+                </li>`;
+      }
+    });
+  } else {
+    days.forEach(function (day, index) {
+      if (index < 6) {
+        forecastHtml =
+          forecastHtml +
+          `
               <li>
                 <div class="forecast-day">${day}</div>
-                <div class="forecast-icon">☀️</div>
+      
+                <img src="images/BackgroundMoonSquare_OnAlpha.png" alt="" class="forecast-icon-img">
+         
                 <div class="forecast-temps">
-                  <div class="forecast-temp-high"><strong> 54° </strong></div>
-                  <div class="forecast-temp-low">48°</div>
+                <div class="forecast-temp-high"><strong> 100°</strong></div>
+                  <div class="forecast-temp-low">0°</div>
                 </div>
-              </li>`;
-  });
+                </li>`;
+      }
+    });
+  }
+
+  let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = forecastHtml;
+}
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[date.getDay()];
+}
+
+function getForecast(city) {
+  let apiKey = "0de0bof3a7bt5b0870ae4284e12b3ada";
+  let forecastAPI = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=imperial`;
+  axios.get(forecastAPI).then(displayForecast);
 }
 
 let searchFormElement = document.querySelector("#search-form");
@@ -122,6 +171,5 @@ searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 let themeButton = document.querySelector(".theme-button");
 themeButton.addEventListener("click", changeTheme);
-//searchCity("Brooklyn");
 
-displayForecast();
+searchCity("Brooklyn");

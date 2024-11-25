@@ -1,8 +1,6 @@
 body {
   background: linear-gradient(135deg, #f5f7fa8f 0%, #8dc4d890 100%) bottom
     center no-repeat;
-  /* background-image: url("/images/BackgroundMoonOnAlpha.png") repeat; */
-
   font-family: "Nunito Sans", "Segoe UI", sans-serif;
 }
 
@@ -137,12 +135,14 @@ p {
   color: rgb(201, 37, 37);
 }
 
-/*Placeholder for extended forecast */
+.tempys {
+  display: flex;
+}
+
+/*Extended forecast */
 .extended-forecast {
   width: 85%;
   margin: auto;
-  /* display: flex;
-  justify-content: center; */
 }
 
 ul {
@@ -155,7 +155,6 @@ ul {
 .forecast-day {
   text-align: center;
   color: rgba(86, 87, 86, 0.777);
-
   font-size: 16px;
   line-height: 20px;
 }
@@ -163,6 +162,13 @@ ul {
 .forecast-icon {
   text-align: center;
   font-size: 25px;
+  border-radius: 50px;
+  border: 1px solid #8dc4d8;
+}
+
+img.forecast-icon-img {
+  border: none;
+  width: 90%;
 }
 
 .forecast-temps {
@@ -189,9 +195,7 @@ ul {
 
 .temp-unit {
   font-size: 30px;
-  position: relative;
-  top: 22px;
-  left: -35px;
+  padding-top: 27px;
 }
 
 .theme-button {
@@ -265,5 +269,9 @@ footer {
 }
 
 .dark input::placeholder {
+  color: #f5f7fa;
+}
+
+.dark .forecast-day {
   color: #f5f7fa;
 }
